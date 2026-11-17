@@ -45,3 +45,19 @@ export async function getProductById(id) {
         throw error;
     }
 }
+// creation du service de suppression
+export async function deleteProduct(id) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: "DELETE",
+        });
+
+        if (!response.ok) {
+            throw new Error("Erreur lors de la suppression du produit");
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Erreur lors de la suppression du produit:", error);
+        throw error;
+    }
+}
