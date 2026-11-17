@@ -25,12 +25,12 @@
       "id": "ZZkS3TNSxfw"
     },
     {
-      "name": "Casque",
-      "description": "Qualité",
-      "price": 80,
+      "name": "Ecran",
+      "description": "Etat parfait",
+      "price": 400,
       "available": true,
       "image": "https://placehold.co/400x250",
-      "id": "I0ghfBb-4B0"
+      "id": "3jzQxqfR1mw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -61,3 +61,21 @@ export async function deleteProduct(id) {
         throw error;
     }
 }
+
+export async function updateProduct(id, updatedFields) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedFields),
+        });
+
+        if (!response.ok) {
+            throw new Error("Erreur lors de la mise à jour du produit");
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Erreur lors de la mise à jour du produit:", error);
+        throw error;
+    }
+}
