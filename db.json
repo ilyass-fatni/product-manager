@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": "2",
-      "name": "Iphone 15",
-      "description": "Smartphone Apple.",
-      "price": 899,
-      "available": true,
-      "image": "https://placehold.co/400x250"
-    },
-    {
       "id": "3",
       "name": "Clavier logitech",
       "description": "Clavier sans fil.",
@@ -25,12 +17,20 @@
       "id": "hlCH_MbTgvQ"
     },
     {
-      "name": "OPPO",
-      "description": "pas cher",
-      "price": 200,
+      "name": "iphone 16",
+      "description": "Reconditionné",
+      "price": 300,
       "available": true,
       "image": "https://placehold.co/400x250",
-      "id": "vupB2SciD_4"
+      "id": "ZZkS3TNSxfw"
+    },
+    {
+      "name": "Casque",
+      "description": "Qualité",
+      "price": 80,
+      "available": true,
+      "image": "https://placehold.co/400x250",
+      "id": "I0ghfBb-4B0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

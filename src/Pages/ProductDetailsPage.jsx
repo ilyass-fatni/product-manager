@@ -14,9 +14,11 @@ function ProductDetailsPage() {
         setError(null)
         try {
             await deleteProduct(id)
+            alert('Produit supprimé avec succés')
             navigate("/")
         } catch (err) {
             console.error(err)
+            alert('Erreur lors de la suppression du produit')
             setError("Impossible de supprimer le produit.")
             setIsDeleting(false)
         }
