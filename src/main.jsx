@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router'
 import Navbar from './Components/Navbar'
 
 // monte l'application dans le DOM
+//DOM: l'interface de programmation qui représente la structure d'une page Web (sous forme d'un arbre d'objets) que le navigateur utilise pour afficher le HTML et permettre à JavaScript de modifier l'écran
 createRoot(document.getElementById('root')).render(
   // active des vérifications supplémentaires en développement
   <StrictMode>

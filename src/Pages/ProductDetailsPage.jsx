@@ -1,11 +1,26 @@
 import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router"
-import { getProductById } from "../services/productService"
+import { useParams, useNavigate, Link } from "react-router"
+import { getProductById, deleteProduct } from "../services/productService"
 
 function ProductDetailsPage() {
     const { id } = useParams() //useParams permet de récupérer les paramètres dynamiques de l'URL
-    const [product, setProduct] = useState(null) //useState: sert à stocker et modifier les données qui font évoluer l'interface, tandis que
+    const navigate = useNavigate()
+    const [product, setProduct] = useState(null) //useState: sert à stocker et modifier les données qui font évoluer l'interface
     const [error, setError] = useState(null)
+    const [isDeleting, setIsDeleting] = useState(false)
+
+    async function handleDelete() {
+        setIsDeleting(true)
+        setError(null)
+        try {
+            await deleteProduct(id)
+            navigate("/")
+        } catch (err) {
+            console.error(err)
+            setError("Impossible de supprimer le produit.")
+            setIsDeleting(false)
+        }
+    }
     //useEffect:  sert à exécuter du code (des effets de bord) en réaction au rendu ou au changement de certaines variables
     useEffect(() => {
         let ignore = false
@@ -60,6 +75,14 @@ function ProductDetailsPage() {
             <Link to="/" className="btn btn-secondary">
                 Retour au catalogue
             </Link>
+            <button
+                type="button"
+                className="btn btn-danger ms-2"
+                onClick={handleDelete}
+                disabled={isDeleting}
+            >
+                {isDeleting ? "Suppression..." : "Supprimer"}
+            </button>
         </div>
     )
 }
